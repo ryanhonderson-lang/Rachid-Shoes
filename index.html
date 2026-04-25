@@ -9,36 +9,32 @@
 <body>
     <header>
         <h1>متجر Rachid Shoes</h1>
-        <p>أناقة وجودة في كل خطوة</p>
+        <p>سلة مشترياتك في انتظارك</p>
     </header>
 
     <div class="container">
         <div class="product-card">
-            <div class="product-image">👟</div> <h2>حذاء رياضي Pro</h2>
-            <p class="price">450 درهم</p>
+            <div class="product-image">👟</div>
+            <h2>حذاء رياضي Pro</h2>
+            <p class="price">450</p>
             <button class="buy-btn">أضف للسلة</button>
         </div>
 
         <div class="product-card">
             <div class="product-image">👞</div>
-            <h2>حذاء كلاسيكي بني</h2>
-            <p class="price">600 درهم</p>
-            <button class="buy-btn">أضف للسلة</button>
-        </div>
-
-        <div class="product-card">
-            <div class="product-image">🏃</div>
-            <h2>حذاء جري خفيف</h2>
-            <p class="price">380 درهم</p>
+            <h2>حذاء كلاسيكي</h2>
+            <p class="price">600</p>
             <button class="buy-btn">أضف للسلة</button>
         </div>
     </div>
 
-    <footer>
-        <p>جميع الحقوق محفوظة لـ Rachid Shoes &copy; 2026</p>
-    </footer>
-</body>
-</html>
+    <div id="cart-section" class="cart">
+        <h3>سلة المشتريات 🛒</h3>
+        <ul id="cart-items"></ul>
+        <hr>
+        <p><strong>الإجمالي: <span id="total-price">0</span> درهم</strong></p>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
