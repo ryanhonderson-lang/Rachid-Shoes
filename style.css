@@ -1,37 +1,38 @@
-/* تنسيق الحاويات لضمان تناسق الأحجام */
-.img-container {
-    background: #f8f8f8;
-    height: 400px; /* طول موحد للصور */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* لترتيب الصور بجانب بعضها */
+    gap: 20px;
+    padding: 40px;
+}
+
+.product-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover; /* لضمان عدم تشوه الصورة */
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.product-item:hover img {
+    transform: scale(1.05); /* تأثير حركي فخم */
+}
+
+.categories {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+}
+
+.cat-item {
+    flex: 1;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    position: relative;
-}
-
-/* تنسيق الصورة داخل الحاوية */
-.product-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* لملء المساحة بدون تشويه الصورة */
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-/* تأثير التكبير عند تمرير الماوس (مثل المواقع الفخمة) */
-.product-item:hover .product-img {
-    transform: scale(1.1);
-}
-
-/* تنسيق النصوص تحت الصور */
-.product-item h3 {
-    margin-top: 15px;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.price {
+    color: white;
+    font-size: 2rem;
     font-weight: bold;
-    color: #1a1a1a;
-    margin-top: 5px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
