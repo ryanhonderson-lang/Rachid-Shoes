@@ -1,32 +1,67 @@
-/* تنسيق شبكة المنتجات */
-.product-grid {
-    display: flex; /* يجعل العناصر بجانب بعضها */
-    justify-content: space-around;
-    flex-wrap: wrap; /* لجعلها متجاوبة مع الهاتف */
-    gap: 20px;
-    padding: 20px;
+/* تنسيق الواجهة الرئيسية (Hero) */
+.hero-section {
+    height: 100vh; /* ملء الشاشة بالكامل */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* تأثير حركة جميل عند التمرير */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
 }
 
-.product-item {
+.hero-content h1 {
+    font-size: 4rem;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.btn-discover {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-discover:hover {
+    background: white;
+    color: black;
+}
+
+/* تنسيق شبكة المنتجات */
+.product-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.product-card {
     flex: 1;
     min-width: 300px;
     text-align: center;
 }
 
-.product-item img {
+.product-card img {
     width: 100%;
-    height: 350px;
-    object-fit: cover; /* يمنع تمدد الصورة بشكل سيء */
+    height: 450px;
+    object-fit: cover;
 }
 
-/* تنسيق قسم التصنيفات الكبير */
+/* تنسيق التصنيفات الكبيرة */
 .categories-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* يقسم الشاشة لنصفين متساويين */
-    height: 500px;
+    display: flex;
+    height: 600px;
+    gap: 10px;
 }
 
-.cat-box {
+.cat-item {
+    flex: 1;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -35,5 +70,10 @@
     color: white;
     font-size: 2rem;
     font-weight: bold;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.cat-item:hover {
+    flex: 1.2; /* تأثير تكبير القسم عند الوقوف عليه */
 }
