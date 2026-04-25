@@ -3,37 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rachid Shoes - متجر الأحذية</title>
+    <title>Rachid Shoes | أناقة، جودة وفخامة</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;600;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>متجر Rachid Shoes</h1>
-        <p>سلة مشترياتك في انتظارك</p>
-    </header>
 
-    <div class="container">
-        <div class="product-card">
-            <div class="product-image">👟</div>
-            <h2>حذاء رياضي Pro</h2>
-            <p class="price">450</p>
-            <button class="buy-btn">أضف للسلة</button>
+    <nav class="navbar">
+        <div class="logo">RACHID</div>
+        <ul class="nav-links">
+            <li><a href="#new-collection">التشكيلة الجديدة</a></li>
+            <li><a href="#oxfords">كلاسيك</a></li>
+            <li><a href="#boots">أحذية شتوية</a></li>
+        </ul>
+        <div class="nav-icons">
+            <span>👤</span>
+            <span class="cart-icon">🛒</span>
         </div>
+    </nav>
 
-        <div class="product-card">
-            <div class="product-image">👞</div>
-            <h2>حذاء كلاسيكي</h2>
-            <p class="price">600</p>
-            <button class="buy-btn">أضف للسلة</button>
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="fade-in">NOUVELLE COLLECTION</h1>
+            <p class="fade-in">-35% على القطعة الثانية</p>
+            <button class="cta-btn fade-in">اكتشف الآن</button>
         </div>
-    </div>
+    </section>
 
-    <div id="cart-section" class="cart">
-        <h3>سلة المشتريات 🛒</h3>
-        <ul id="cart-items"></ul>
-        <hr>
-        <p><strong>الإجمالي: <span id="total-price">0</span> درهم</strong></p>
-    </div>
+    <section id="new-collection" class="section-container">
+        <h2 class="section-title">التشكيلة الكاملة</h2>
+        <p class="section-subtitle">إبداع مغربي بأنامل عالمية</p>
+
+        <div class="product-grid">
+            
+            <div class="product-item">
+                <div class="img-container">👟</div>
+                <h3>Alvin Loafer Marron</h3>
+                <p class="desc">جلد طبيعي، صناعة يدوية</p>
+                <p class="price">2.400 MAD</p>
+            </div>
+
+            <div class="product-item">
+                <div class="img-container">👞</div>
+                <h3>Alvin Noir SC</h3>
+                <p class="desc">أناقة كلاسيكية أسود لامع</p>
+                <p class="price">2.400 MAD</p>
+            </div>
+
+            <div class="product-item">
+                <div class="img-container">👞</div>
+                <h3>Alvin Noir SG</h3>
+                <p class="desc">مثالي للمناسبات الرسمية</p>
+                <p class="price">2.400 MAD</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="category-section">
+        <h2 class="section-title">تصفح حسب الأقسام</h2>
+        <div class="category-grid">
+            <div class="category-item oxfords">
+                <h3>OXFORDS</h3>
+            </div>
+            <div class="category-item boots">
+                <h3>BOOTS</h3>
+            </div>
+            <div class="category-item loafers">
+                <h3>LOAFERS</h3>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة لـ RACHID &copy; 2026</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
