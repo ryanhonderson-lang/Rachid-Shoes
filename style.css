@@ -1,140 +1,37 @@
-/* تنسيقات عامة وفخمة */
-:root {
-    --primary-color: #000000; /* الأسود ملك الأناقة */
-    --accent-color: #ffffff;
-    --text-color: #333333;
-    --heading-font: 'Playfair Display', serif; /* خط كلاسيكي فخم */
-    --body-font: 'Alexandria', sans-serif; /* خط عصري واضح */
-}
-
-body {
-    margin: 0;
-    font-family: var(--body-font);
-    color: var(--text-color);
-    background-color: var(--accent-color);
-    scroll-behavior: smooth; /* حركة ناعمة عند النزول */
-}
-
-h1, h2, h3 { font-family: var(--heading-font); font-weight: 500; }
-
-/* 1. القائمة العلوية الشفافة */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 80px;
-    background: transparent; /* شفاف تماماً */
-    color: white;
-    position: fixed;
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 2000;
-    transition: 0.3s;
-}
-
-/* تحويل القائمة للأسود عند النزول (يتم برمجتها لاحقاً) */
-.navbar.scrolled {
-    background: var(--primary-color);
-    padding: 10px 80px;
-}
-
-.logo { font-size: 1.8rem; font-weight: 800; letter-spacing: 3px; font-family: var(--heading-font); }
-.nav-links { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
-.nav-links a { text-decoration: none; color: white; font-weight: 300; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-.nav-links a:hover { opacity: 0.7; }
-.nav-icons { display: flex; gap: 20px; cursor: pointer; }
-
-/* 2. القسم الرئيسي المماثل للفيديو */
-.hero {
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2012&auto=format&fit=crop') no-repeat center center/cover;
+/* تنسيق الحاويات لضمان تناسق الأحجام */
+.img-container {
+    background: #f8f8f8;
+    height: 400px; /* طول موحد للصور */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    text-align: center;
+    overflow: hidden;
     position: relative;
 }
 
-.hero-overlay {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.2); /* طبقة تظليل خفيفة جداً */
+/* تنسيق الصورة داخل الحاوية */
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لملء المساحة بدون تشويه الصورة */
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.hero-content { z-index: 10; }
-.hero h1 { font-size: 5rem; text-transform: uppercase; letter-spacing: 8px; margin: 0; }
-.hero p { font-size: 1.5rem; font-weight: 300; margin-top: -10px; margin-bottom: 40px; }
+/* تأثير التكبير عند تمرير الماوس (مثل المواقع الفخمة) */
+.product-item:hover .product-img {
+    transform: scale(1.1);
+}
 
-/* زر التفاعل الفخم */
-.cta-btn {
-    padding: 18px 45px;
-    background-color: var(--accent-color);
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
+/* تنسيق النصوص تحت الصور */
+.product-item h3 {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-family: var(--body-font);
-    transition: 0.3s ease;
-}
-.cta-btn:hover { background-color: #eee; transform: scale(1.05); }
-
-/* 3. شبكة المنتجات (Grid) الاحترافية */
-.section-container { padding: 100px 80px; text-align: center; }
-.section-title { font-size: 3rem; margin-bottom: 0; text-transform: uppercase; letter-spacing: 4px; }
-.section-subtitle { font-size: 1.2rem; color: #888; font-weight: 300; margin-top: 10px; margin-bottom: 70px; }
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
 }
 
-.product-item { text-align: left; border-radius: 5px; overflow: hidden; transition: 0.4s; padding-bottom: 20px; }
-.product-item:hover { transform: translateY(-10px); }
-
-.img-container {
-    background: #f8f8f8;
-    height: 450px; /* صور كبيرة جداً مثل الفيديو */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 150px; /* الإيموجي سيكون كبيراً مؤقتاً */
-    transition: 0.3s;
+.price {
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-top: 5px;
 }
-
-.product-item:hover .img-container { background: #f0f0f0; }
-.product-item h3 { font-size: 1.4rem; margin-top: 20px; margin-bottom: 5px; color: var(--primary-color); }
-.desc { color: #888; font-weight: 300; font-size: 0.9rem; margin: 0; }
-.price { font-weight: bold; font-size: 1.1rem; color: #333; margin-top: 10px; }
-
-/* 5. قسم الأقسام (Category Section) */
-.category-section { padding: 100px 80px; background: #fafafa; }
-.category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.category-item {
-    height: 300px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    color: white;
-    padding-bottom: 30px;
-    background-color: var(--primary-color);
-    background-position: center;
-    background-size: cover;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-/* روابط لصور عشوائية للأقسام */
-.oxfords { background-image: url('https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=2000&auto=format'); }
-.boots { background-image: url('https://images.unsplash.com/photo-1596706911676-e41c48e02d6b?q=80&w=2000&auto=format'); }
-.loafers { background-image: url('https://images.unsplash.com/photo-1618677603289-e8be891e4e46?q=80&w=2000&auto=format'); }
-
-.category-item:hover { opacity: 0.8; }
-.category-item h3 { font-size: 2rem; letter-spacing: 5px; margin: 0; }
-
-footer { text-align: center; padding: 40px; background: var(--primary-color); color: #aaa; font-size: 0.9rem; font-weight: 300; }
-
-/* تأثيرات حركية عند الدخول */
-.fade-in { animation: fadeIn 1.5s ease-in-out; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
