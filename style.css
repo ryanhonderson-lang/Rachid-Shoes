@@ -133,3 +133,27 @@ footer p {
     font-size: 0.9rem;
     opacity: 0.8;
 }
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* المسافة بين الأيقونتين */
+    margin-top: 20px;
+}
+
+.social-icon {
+    font-size: 2.5rem;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px); /* حركة بسيطة للأعلى عند الوقوف عليها */
+}
+
+.instagram {
+    color: #E1306C; /* لون إنستغرام */
+}
+
+.whatsapp {
+    color: #25D366; /* لون واتساب الرسمي الأخضر */
+}
