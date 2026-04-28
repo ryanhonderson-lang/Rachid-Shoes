@@ -96,3 +96,23 @@ body {
     object-fit: cover;
     border-radius: 8px;
 }
+footer {
+    background-color: #0a0a0a;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.instagram-link {
+    color: #ff5a1f; /* اللون البرتقالي الذي استخدمته في تصميمك */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.instagram-link:hover {
+    color: white;
+    text-shadow: 0 0 10px #ff5a1f;
+}
