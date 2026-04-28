@@ -1,86 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ar" dir="rtl" class="h-full">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Med__Shoes</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachid Shoes | متجر راشد للأحذية</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="h-full">
+    <div class="app-wrapper h-full w-full overflow-auto">
+        <header class="sticky top-0 z-40 backdrop-blur-lg bg-black/60 border-b border-white/5">
+            <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl flex items-center justify-center bg-[#ff5a1f]">
+                        <i data-lucide="footprints" class="text-black"></i>
+                    </div>
+                    <span id="brand-name" class="display-font text-2xl font-black tracking-wider">RACHID SHOES</span>
+                </div>
+                <ul class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                    <li><a href="#products" class="hover:text-[#ff5a1f] transition">المنتجات</a></li>
+                    <li><a href="#about" class="hover:text-[#ff5a1f] transition">من نحن</a></li>
+                    <li><a href="#contact" class="hover:text-[#ff5a1f] transition">اتصل بنا</a></li>
+                </ul>
+                <button id="cart-btn" class="relative w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                    <i data-lucide="shopping-bag"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-[#ff5a1f] text-black text-xs font-black w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </nav>
+        </header>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="logo">
-    <h2>Med__Shoes</h2>
-    <span>محل أحذية</span>
-  </div>
+        <main>
+            <section class="hero-bg noise relative overflow-hidden">
+                <div class="max-w-7xl mx-auto px-6 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-up">
+                        <h1 id="hero-title" class="display-font text-6xl md:text-8xl font-black mb-6">امش بخطى <span class="text-[#ff5a1f]">واثقة</span></h1>
+                        <p id="hero-subtitle" class="text-lg text-white/70 mb-8 max-w-md">أحذية مصممة بعناية لتمنحك الراحة والأناقة.</p>
+                        <div class="flex gap-4">
+                            <a href="#products" class="glow-btn bg-[#ff5a1f] text-black font-black px-8 py-4 rounded-full">تسوق الآن</a>
+                        </div>
+                    </div>
+                    <div class="relative flex justify-center fade-up">
+                        <div id="hero-shoe-svg"></div> </div>
+                </div>
+            </section>
 
-  <div class="icons">
-    <span>🛍️</span>
-    <span>☰</span>
-  </div>
-</header>
+            <section id="products" class="max-w-7xl mx-auto px-6 py-20">
+                <div class="flex justify-between mb-12 flex-wrap gap-4">
+                    <h2 class="display-font text-5xl font-black">الأكثر مبيعاً</h2>
+                    <div id="filter-tabs" class="flex gap-2">
+                        <button data-filter="all" class="filter-btn px-5 py-2 rounded-full bg-[#ff5a1f] text-black">الكل</button>
+                        <button data-filter="sport" class="filter-btn px-5 py-2 rounded-full bg-white/10">رياضي</button>
+                    </div>
+                </div>
+                <div id="products-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </section>
+        </main>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="overlay">
-    <p class="tag">CURATED FOOTWEAR DESTINATION</p>
-    <h1>Intention <br><span>in Every Step</span></h1>
-    <p class="desc">
-      Where quality craftsmanship meets street-style cool.
-    </p>
-    <button class="btn-primary">Shop The Collection →</button>
-    <button class="btn-outline">Our Craft</button>
-  </div>
-</section>
+        <div id="cart-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+            <div class="bg-[#141414] border border-white/10 rounded-2xl max-w-md w-full p-6">
+                <h3 class="display-font text-2xl font-black mb-4">عربة التسوق</h3>
+                <div id="cart-items" class="space-y-3"></div>
+                <div class="border-t border-white/10 mt-4 pt-4 flex justify-between font-black">
+                    <span>المجموع</span>
+                    <span id="cart-total" class="text-[#ff5a1f]">0 د.م</span>
+                </div>
+                <button id="close-cart" class="mt-4 w-full bg-white/10 py-2 rounded-xl">إغلاق</button>
+            </div>
+        </div>
 
-<!-- CATEGORY -->
-<section class="categories">
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff"/>
-    <h2>Men's</h2>
-    <a href="#">Shop Now →</a>
-  </div>
+        <div id="toast-container" class="fixed bottom-6 left-6 z-50 space-y-2"></div>
+    </div>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77"/>
-    <h2>Women's</h2>
-    <a href="#">Shop Now →</a>
-  </div>
-</section>
-
-<!-- PRODUCTS -->
-<section class="products">
-  <h2>Latest Arrivals</h2>
-
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519"/>
-    <h3>Aura Classic Sneaker</h3>
-    <span>1,250 MAD</span>
-  </div>
-
-  <div class="product">
-    <img src="https://images.unsplash.com/photo-1608256246200-53e8b47b9d4c"/>
-    <h3>Heritage Oxford</h3>
-    <span>1,850 MAD</span>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter">
-  <h2>The Drop List</h2>
-  <p>Subscribe to get notified about exclusive drops.</p>
-
-  <div class="input-box">
-    <input type="email" placeholder="Email address"/>
-    <button>→</button>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Med__Shoes. All rights reserved.</p>
-</footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
