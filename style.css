@@ -116,3 +116,20 @@ footer {
     color: white;
     text-shadow: 0 0 10px #ff5a1f;
 }
+.instagram-icon {
+    font-size: 2.5rem; /* حجم الأيقونة */
+    color: #E1306C; /* لون إنستغرام الرسمي */
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.instagram-icon:hover {
+    transform: scale(1.2); /* تكبير بسيط عند تمرير الفأرة */
+    color: #ff5a1f; /* يتغير للبرتقالي الخاص بموقعك */
+}
+
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
